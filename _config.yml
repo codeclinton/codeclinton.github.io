@@ -1,0 +1,6 @@
+url: "localhost"
+markdown: rdiscount
+highlighter: pygments
+permalink: /blog/:title
+rdiscount:
+  extensions: [smart]

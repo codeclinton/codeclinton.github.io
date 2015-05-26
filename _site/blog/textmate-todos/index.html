@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	  
+	    Using TextMate's TODO bundle
+	  
+	</title>
+	<link rel="shortcut icon" href="http://freqn.aws.af.cm/images/favicon.ico">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="http://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov;stencil-std;cabin;shuriken-std.js"></script>
+
+	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<link rel="stylesheet" href="/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="alternate" href="http://freqn.com/feed/" type="application/rss+xml" />
+
+  <script type="text/javascript" src="//use.typekit.net/oih2jiw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <ul class="nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <p class="date">June 25, 2007</p>
+<h1 class="words">Using TextMate's TODO bundle</h1>
+<p>If you use TextMate, you should really think about using the TODO bundle more often.  It&rsquo;s a simple, low-maintenance bundle that adds tremendous value to your code.</p>
+
+<h2>Setting TODO, FIXME, and CHANGELOG</h2>
+
+<p>Using the bundle is pretty easy.  In any language, just type in a quick comment with the prefix TODO, FIXME or CHANGED like so:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">view</span>
+  <span class="c1"># TODO: different display for different types of clips: active, processing, etc</span>
+  <span class="vi">@clip</span> <span class="o">=</span> <span class="no">Clip</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+  <span class="c1"># TODO: Make a real related clips dealieo</span>
+  <span class="vi">@related_clips</span> <span class="o">=</span> <span class="no">Clip</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">,</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="p">,</span> <span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;clips.status = &#39;processed&#39;&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="k">end</span></code></pre></div>
+
+
+<p>Using this syntax lets you keep pushing ahead at full steam and leave the hard stuff for later.  For example, in the above example I wanted to get a quick functional prototype out the door.  It wasn&rsquo;t mandatory that the Related Clips <em>actually</em> be related: it was only mandatory that there was content present.</p>
+
+<p>You can also use the keywords FIXME or CHANGED throughout your code, like so:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">view</span>
+  <span class="c1"># FIXME: This totally breaks if an invalid ID is given</span>
+  <span class="vi">@clip</span> <span class="o">=</span> <span class="no">Clip</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+  <span class="c1"># CHANGED: @related_clips now uses a model method related_clips</span>
+  <span class="vi">@related_clips</span> <span class="o">=</span> <span class="no">Clip</span><span class="o">.</span><span class="n">related_clips</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+<span class="k">end</span></code></pre></div>
+
+
+<p>This lets others working on the code let you know that you <em>know</em> something is broken and/or changed, but you just don&rsquo;t have time to get to it.</p>
+
+<h2>Getting the information back</h2>
+
+<p>Well, that&rsquo;s all fine and well.. but how do you know what needs to be fixed/changed/done ?  Just hit Ctr+Shift+T  and TextMate will pop up with a pretty little list, hyperlinked and all</p>
+
+<div class="figure">
+  <img src="http://assets.warpspire.com/images/textmate-todo-bundle/list.gif" alt="Screenshot of the TODO list" />
+  <small><em>Ctrl + Shift + T</em> brings up a list of all your todo's</small>
+</div>
+
+
+<p>I use this bundle practically every time I open up Textmate.  It allows me to keep on a focused track of development, while still keeping a lot of &ldquo;ooh, I need to do that sometime&rdquo; kind of tasks on the radar.</p>
+
+<a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Using TextMate's TODO bundle&quot;%20localhost/blog/textmate-todos%20via%20&#64;freqn"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <i class="fa fa-twitter"></i>
+</a>
+<a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=localhost/blog/textmate-todos"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=localhost/blog/textmate-todos"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+<div class="keep-in-touch">
+  <p>
+    If you'd like to keep in touch, I tweet <a href="https://twitter.com/kneath">@kneath</a> on Twitter. You're also welcome to send a polite email to <a href="mailto:kyle@warpspire.com">kyle@warpspire.com</a>. I don't always get the chance to respond, but email is always the best way to get in touch.
+  </p>
+  <p class="comments">
+Comments on Warpspire are currently an experiment. Please, try to be a good human (or you will be removed).
+  </p>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'warpspire';
+    var disqus_identifier = '/blog/textmate-todos';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		<p style="text-align: center;">Copyright &copy; <script type="text/javascript">document.write(new Date().getFullYear())</script> Freqn Labs, All Rights Reserved.</p>
+
+  </div><!-- /.main -->
+
+  <script type="text/javascript" src="/js/fastclick.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
+  </script>
+
+</body>
+</html>

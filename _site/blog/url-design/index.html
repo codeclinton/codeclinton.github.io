@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	  
+	    URL Design
+	  
+	</title>
+	<link rel="shortcut icon" href="http://freqn.aws.af.cm/images/favicon.ico">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="http://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov;stencil-std;cabin;shuriken-std.js"></script>
+
+	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<link rel="stylesheet" href="/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="alternate" href="http://freqn.com/feed/" type="application/rss+xml" />
+
+  <script type="text/javascript" src="//use.typekit.net/oih2jiw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <ul class="nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <p class="date">December 28, 2010</p>
+<h1 class="words">URL Design</h1>
+<p><strong>You should take time to design your URL structure.</strong> If there&rsquo;s one thing I hope you remember after reading this article it&rsquo;s to take time to design your URL structure. Don&rsquo;t leave it up to your framework. Don&rsquo;t leave it up to chance. Think about it and craft an experience.</p>
+
+<p>URL Design is a complex subject. I can&rsquo;t say there are any &ldquo;right&rdquo; solutions — it&rsquo;s much like the rest of design. There&rsquo;s good URL design, there&rsquo;s bad URL design, and there&rsquo;s everything in between — it&rsquo;s subjective.</p>
+
+<p>But that doesn&rsquo;t mean there aren&rsquo;t best practices for creating great URLs. I hope to impress upon you some best practices in URL design I&rsquo;ve learned over the years and explain why I think new HTML5 javascript history APIs are so exciting to work with.</p>
+
+<h2>Why you need to be designing your URLs</h2>
+
+<div class="figure"><img src="http://assets.warpspire.com/images/urldesign/chrome.jpg" alt="Chrome's URL bar" /></div>
+
+
+<p>The URL bar has become a main attraction of modern browsers. And it&rsquo;s not just a simple URL bar anymore — you can type partial URLs and browsers use dark magic to seemingly conjure up exactly the full URL you were looking for. When I type in <strong><code>resque issues</code></strong> into my URL bar, the first result is <code>https://github.com/defunkt/resque/issues</code>.</p>
+
+<p>URLs are <em>universal</em>. They work in Firefox, Chrome, Safari, Internet Explorer, cURL, wget, your iPhone, Android and even written down on sticky notes. They are the one universal syntax of the web. Don&rsquo;t take that for granted.</p>
+
+<p>Any regular semi-technical user of your site should be able to navigate 90% of your app based off memory of the URL structure. In order to achieve this, your URLs will need to be <em>pragmatic.</em> Almost like they were a math equation — many simple rules combined in a strategic fashion to get to the page they want.</p>
+
+<h2>Top level sections are gold</h2>
+
+<p>The most valuable aspect of any URL is what lies at the top level section. In my opinion, it should be the first discussion of any startup directly after the idea is solidified. Long before any technology discussion. Long before any code is written. This is top-level section is going to change the fundamentals of how your site functions.</p>
+
+<p>Do I seem dramatic? It may seem that way — but come 1,000,000 users later think about how big of an impact it will be. Think about how big of a deal Facebook&rsquo;s rollout of usernames was. Available URLs are a lot like real estate and the top level section is the best property out there.</p>
+
+<p>Another quick tip — whenever you&rsquo;re building a new site, think about <a href="http://www.quora.com/How-do-sites-prevent-vanity-URLs-from-colliding-with-future-features?__snids__=4909005">blacklisting a set of vanity URLs</a> (and maybe learn a little bit about bad URL design from Quora&rsquo;s URLs).</p>
+
+<h2>Namespacing is a great tool to expand URLs</h2>
+
+<p>Namespaces can be a great way to build up a pragmatic URL structure that&rsquo;s easy to remember with continued usage. What do I mean by a namespace? I mean a portion of a URL that dictates unique content. An example:</p>
+
+<pre><code>https://github.com/<strong>defunkt/resque</strong>/issues</code></pre>
+
+
+<p>In the URL above, <strong><code>defunkt/resque</code></strong> is the namespace. Why is this useful? Because anything after that URL suddenly becomes a new top level section. So you can go to any <strong><code>&lt;user&gt;/&lt;repo&gt;</code></strong> and then tack on <code>/issues</code> or maybe <code>/wiki</code> and get the same page, but under a different namespace.</p>
+
+<p>Keep that namespace clean. Don&rsquo;t start throwing some content under <code>/feature/<strong>&lt;user&gt;/&lt;repo&gt;</strong></code> and some under <code>/<strong>&lt;user&gt;/&lt;repo&gt;</strong>/feature</code>. For a namespace to be effective it has to be universal.</p>
+
+<h2>Querystrings are great for filters and sorts</h2>
+
+<p>The web has had a confused past with regards to querystrings. I&rsquo;ve seen everything from every page of a site being served from one URL with different querystring parameters to sites who don&rsquo;t use a single querystring parameter.</p>
+
+<p>I like to think of querystrings as the knobs of URLs — something to tweak your current view and fine tune it to your liking. That&rsquo;s why they work so great for sorting and filtering actions. Stick to a uniform pattern (<code>sort=alpha&amp;dir=desc</code> for instance) and you&rsquo;ll make sorting and filtering via the URL bar easy and rememberable.</p>
+
+<p>One last thing regarding querystrings: The page should work without the querystrings attached. It may show a different page, but the URL without querystrings should render.</p>
+
+<h2>Non-ASCII URLs are terrible for english sites</h2>
+
+<p>The world is a complicated place filled with ¿ümlåts?, ¡êñyés! and all sorts of awesome characters ☄. These characters have no place in the URL of any english site. They&rsquo;re complicated to type with english keyboards and often times expand into confusing characters in browsers (ever see <code>xn--n3h</code> in a url? That&rsquo;s a ☃).</p>
+
+<h2>URLs are for humans — not for search engines</h2>
+
+<p>I grew up in this industry learning how to game search engines (well, Google) to make money off my affiliate sales, so I&rsquo;m no stranger to the practice of keyword stuffing URLs. It was fairly common to end up with a URL like this:</p>
+
+<pre><code>http://guitars.example.com/best-guitars/cheap-guitars/popular-guitar
+</code></pre>
+
+<p>That kind of URL used to be great for SEO purposes. Fortunately Google&rsquo;s hurricane updates of 2003 eliminated any ranking benefit of these URLs. Unfortunately the professional SEO industry is centered around extortion and still might advise you stuff your URLs with as many keywords as you can think of. They&rsquo;re wrong — ignore them.</p>
+
+<p>Some additional points to keep in mind:</p>
+
+<ul>
+<li><p>Underscores are just bad. Stick to dashes.</p></li>
+<li><p>Use short, full, and commonly known words. If a section has a dash or special character in it, the word is probably too long.</p></li>
+</ul>
+
+
+<p>URLs are for humans. <strong>Design them for humans.</strong></p>
+
+<h2>A URL is an agreement</h2>
+
+<p>A URL is an agreement to serve something from a predictable location for as long as possible. Once your first visitor hits a URL you&rsquo;ve implicitly entered into an agreement that if they bookmark the page or hit refresh, they&rsquo;ll see the same thing.</p>
+
+<p><strong>Don&rsquo;t change your URLs after they&rsquo;ve been publicly launched.</strong> If you absolutely must change your URLs, add redirects — it&rsquo;s not that scary.</p>
+
+<h2>Everything should have a URL</h2>
+
+<p>In an ideal world, every single screen on your site should result in a URL that can be copy &amp; pasted to reproduce the same screen in another tab/browser. In fairness, this wasn&rsquo;t completely possible until very recently with some of the new HTML5 browser history Javascript APIs. Notably, there are two new methods:</p>
+
+<ul>
+<li><p><strong><code>onReplaceState</code></strong> — This method replaces the current URL in the browser history, leaving the back button unaffected.</p></li>
+<li><p><strong><code>onPushState</code></strong> - This method pushes a new URL onto the browser&rsquo;s history, replacing the URL in the URL bar <em>and</em> adding it to the browser&rsquo;s history stack (affecting the back button).</p></li>
+</ul>
+
+
+<h3>When to use <code>onReplaceState</code> and when to use <code>onPushState</code></h3>
+
+<p>These new methods allow us to change the <em>entire</em> path in the URL bar, not just the anchor element. With this new power, comes a new design responsibility — we need to craft the back button experience.</p>
+
+<p>To determine which to use, ask yourself this question: <em>Does this action produce new content or is it a different display of the same content?</em></p>
+
+<ol>
+<li><p><strong>Produces new content</strong> — you should use <code>onPushState</code> (ex: pagination links)</p></li>
+<li><p><strong>Produces a different display of the same content</strong> — you should use <code>onReplaceState</code> (ex: sorting and filtering)</p></li>
+</ol>
+
+
+<p>Use your own judgement, but these two rules should get you 80% there. Think about what you want to see when you click the back button and make it happen.</p>
+
+<h2>A link should behave like a link</h2>
+
+<p>There&rsquo;s a lot of awesome functionality built into linking elements like <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code>.  If you middle click or command-click on them they&rsquo;ll open in new windows. When you hover over an <code>&lt;a&gt;</code> your browser tells you the URL in the status bar.  Don&rsquo;t break this behavior when playing with <code>onReplaceState</code> and <code>onPushState</code>.</p>
+
+<ul>
+<li><p>Embed the location of AJAX requests in the <code>href</code> attributes of anchor elements.</p></li>
+<li><p><code>return true</code> from Javascript click handlers when people middle or command click.</p></li>
+</ul>
+
+
+<p>It&rsquo;s fairly simple to do this with a quick conditional inside your click handlers. Here&rsquo;s an example jQuery compatible snippet:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;a.ajaxylink&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+  <span class="c1">// Fallback for browser that don&#39;t support the history API</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s1">&#39;replaceState&#39;</span> <span class="k">in</span> <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">))</span> <span class="k">return</span> <span class="kc">true</span>
+
+  <span class="c1">// Ensure middle, control and command clicks act normally</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">which</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">metaKey</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">ctrlKey</span><span class="p">){</span>
+    <span class="k">return</span> <span class="kc">true</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Do something awesome, then change the URL</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">replaceState</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;New Title&quot;</span><span class="p">,</span> <span class="s1">&#39;/some/cool/url&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">false</span>
+<span class="p">})</span></code></pre></div>
+
+
+<h2>Post-specific URLs need to die</h2>
+
+<p>In the past, the development community loved to create URLs which could never be re-used. I like to call them POST-specific URLs — they&rsquo;re the URLs you see in your address bar after you submit a form, but when you try to copy &amp; pasting the url into a new tab you get an error.</p>
+
+<p>There&rsquo;s no excuse for these URLs at all. Post-specific URLs are for redirects and APIs — not end-users.</p>
+
+<h2>A great example</h2>
+
+<div class="figure"><a href="https://github.com/resque/resque/pull/175#issuecomment-619615"><img src="http://assets.warpspire.com/images/urldesign/urlparts.1.gif" alt="Example URL" /></a></div>
+
+
+<ol>
+<li><p>ASCII-only user generated URL parts (defunkt, resque).</p></li>
+<li><p>&ldquo;pull&rdquo; is a short version of &ldquo;pull request&rdquo; — single word, easily associated to the origin word.</p></li>
+<li><p>The pull request number is scoped to defunkt/resque (starts at <strong>one</strong> there).</p></li>
+<li><p>Anchor points to a scrolling position, not hidden content.</p></li>
+</ol>
+
+
+<p><strong>Bonus points:</strong> This URL has many different formats as well — check out the <a href="https://github.com/resque/resque/pull/175.patch">patch</a> and <a href="https://github.com/resque/resque/pull/175.diff">diff</a> versions.</p>
+
+<h2>The beginning of an era</h2>
+
+<p>I hope that as usage of new Javascript APIs increases, designers and developers take time to design URLs.  It&rsquo;s an important part of any site&rsquo;s usability and too often I see URLs ignored. While it&rsquo;s easy to redesign the look &amp; feel of a site, it&rsquo;s <em>much</em> more difficult to redesign the URL structure.</p>
+
+<p>But I&rsquo;m excited. I&rsquo;ve watched URLs change over the years. At times hard-linking was sacrificed at the altar of AJAX while other times performance was sacrificed to generate real URLs for users. We&rsquo;re finally at a point in time where we can have the performance and usability benefits of partial page rendering while designing a coherent and refined URL experience at the same time.</p>
+
+<a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;URL Design&quot;%20localhost/blog/url-design%20via%20&#64;freqn"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <i class="fa fa-twitter"></i>
+</a>
+<a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=localhost/blog/url-design"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=localhost/blog/url-design"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+<div class="keep-in-touch">
+  <p>
+    If you'd like to keep in touch, I tweet <a href="https://twitter.com/kneath">@kneath</a> on Twitter. You're also welcome to send a polite email to <a href="mailto:kyle@warpspire.com">kyle@warpspire.com</a>. I don't always get the chance to respond, but email is always the best way to get in touch.
+  </p>
+  <p class="comments">
+Comments on Warpspire are currently an experiment. Please, try to be a good human (or you will be removed).
+  </p>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'warpspire';
+    var disqus_identifier = '/blog/url-design';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		<p style="text-align: center;">Copyright &copy; <script type="text/javascript">document.write(new Date().getFullYear())</script> Freqn Labs, All Rights Reserved.</p>
+
+  </div><!-- /.main -->
+
+  <script type="text/javascript" src="/js/fastclick.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
+  </script>
+
+</body>
+</html>
