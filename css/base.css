@@ -401,18 +401,18 @@ p.note {
 .keep-in-touch {
   margin: 30px 0;
   color: #aaa;
-  border-top: 1px solid #dfe4ea;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid #8A8A8A;
+  border-bottom: 1px solid #8A8A8A;
 }
 .keep-in-touch p:first-child {
   margin-top: 0;
   padding-top: 20px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #8A8A8A;
 }
 .keep-in-touch p:last-child {
   margin-bottom: 0;
   padding-bottom: 20px;
-  border-bottom: 1px solid #dfe4ea;
+  border-bottom: 1px solid #8A8A8A;
 }
 .keep-in-touch a {
   color: #666;
@@ -569,21 +569,31 @@ code.html span.doctype {
 #confirm {
   text-align: center;
 }
-/*.contactLeft {
-  padding: 0;
-  margin: 0;
-  float:left;
-  width: 50%;
-  max-width: 320px;
-}
-.contactRight {
-  padding: 0;
-  margin: 0;
-  float:left;
-  width: 50%;
-  min-width: 320px
-}*/
 
+/*----------------------------------------------------------------------------
+  Share Buttons
+----------------------------------------------------------------------------*/
+.shareRow {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+.shareRow p {
+  color: #8A8A8A;
+}
+.shareButton {
+  padding: 0 10px;
+}
+
+.fa-twitter {
+  color: #55acee;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-google-plus {
+  color: #dd4b39;
+}
 /*----------------------------------------------------------------------------
   Default Pygments Styles
 ----------------------------------------------------------------------------*/
