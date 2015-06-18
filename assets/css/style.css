@@ -880,7 +880,7 @@ figure.effect-bubba:hover h2,
 figure.effect-bubba:hover p,
 figure.effect-bubba:hover .btn-success {
 	opacity: 1;
-	-webkit-transform: translate3d(0,-10px,0);
+	-webkit-transform: translate3d(0,-5px,0);
 	transform: translate3d(0,15px,0);
 	font-weight: 500;
 }
