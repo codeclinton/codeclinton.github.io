@@ -156,4 +156,8 @@
 
 	});
 
+	$('#nature').click(function() {
+  	window.location='./info.html';
+	});
+
 })(jQuery);

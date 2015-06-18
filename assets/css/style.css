@@ -975,3 +975,16 @@ figure.effect-bubba:hover .btn-success {
 	}
 
 }
+
+@media (orientation: landscape) {
+	figcaption, img {
+		max-height: 181px;
+	}
+}
+
+#homeBtn {
+	font-size: 50px;
+	margin-top: 80px;
+	position: relative;
+	top: 80px;
+}
