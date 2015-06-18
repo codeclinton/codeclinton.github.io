@@ -156,7 +156,7 @@
 
 	});
 
-	$('#nature').click(function() {
+	$('.appLaunch').click(function() {
   	window.location='./info.html';
 	});
 
