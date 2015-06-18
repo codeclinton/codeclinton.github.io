@@ -847,8 +847,8 @@ figure.effect-bubba figcaption::after {
 figure.effect-bubba h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
-	-webkit-transform: translate3d(0, 60px,0);
-	transform: translate3d(0,60px,0);
+	-webkit-transform: translate3d(0, 50px,0);
+	transform: translate3d(0,50px,0);
   color: #fff;
 }
 
@@ -881,7 +881,7 @@ figure.effect-bubba:hover p,
 figure.effect-bubba:hover .btn-success {
 	opacity: 1;
 	-webkit-transform: translate3d(0,15px,0);
-	transform: translate3d(0,15px,0);
+	transform: translate3d(0,0,0);
 	font-weight: 500;
 }
 
