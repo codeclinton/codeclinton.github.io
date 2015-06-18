@@ -612,6 +612,7 @@ textarea.form-control {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
 	bottom: 40px;
 	border: 2px solid #fff;
 	border-radius: 50%;
@@ -978,7 +979,7 @@ figure.effect-bubba:hover .btn-success {
 }
 
 @media (orientation: landscape) {
-	.into {
+	.intro {
 		top: 40%;
 	}
 	figcaption, img {
