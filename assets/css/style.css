@@ -535,7 +535,7 @@ textarea.form-control {
 }
 #custom-collapse {
 	text-align: center;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 .navbar-custom .navbar-brand,
@@ -823,7 +823,7 @@ figure.effect-bubba:hover img {
 	opacity: 0.4;
 }
 
-figure.effect-bubba figcaption::before,
+/*figure.effect-bubba figcaption::before,
 figure.effect-bubba figcaption::after {
 	position: absolute;
 	top: 30px;
@@ -848,14 +848,13 @@ figure.effect-bubba figcaption::after {
 	border-left: 1px solid #fff;
 	-webkit-transform: scale(1,0);
 	transform: scale(1,0);
-}
+}*/
 
 figure.effect-bubba h2 {
-	padding-top: 10%;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
-	-webkit-transform: translate3d(0,-20px,0);
-	transform: translate3d(0,-20px,0);
+	-webkit-transform: translate3d(0,-5px,0);
+	transform: translate3d(0,-5px,0);
     color: #fff;
 }
 
@@ -864,8 +863,16 @@ figure.effect-bubba p {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,20px,0);
-	transform: translate3d(0,20px,0);
+	-webkit-transform: translate3d(0,5px,0);
+	transform: translate3d(0,5px,0);
+}
+
+figure.effect-bubba .btn-success {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,5px,0);
+	transform: translate3d(0,5px,0);
 }
 
 figure.effect-bubba:hover figcaption::before,
@@ -876,7 +883,8 @@ figure.effect-bubba:hover figcaption::after {
 }
 
 figure.effect-bubba:hover h2,
-figure.effect-bubba:hover p {
+figure.effect-bubba:hover p,
+figure.effect-bubba:hover .btn-success {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
