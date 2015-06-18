@@ -533,6 +533,10 @@ textarea.form-control {
 	background: #fff;
 	padding: 0;
 }
+#custom-collapse {
+	text-align: center;
+	font-weight: 400;
+}
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a,
