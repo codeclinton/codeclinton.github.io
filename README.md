@@ -1,3 +1,3 @@
-# Freqn.com
+# A Small Town SmartBeacon Thing
 
-This repository contains the content for <http://freqn.com>.
+This repository contains the content for <http://codeclinton.github.io>.
